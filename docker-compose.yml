@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  web-server:
+    build:
+      dockerfile: php.Dockerfile
+      context: php
+    restart: always
+    volumes:
+      - ./src:/var/www/html/
+    ports:
+      - "8024:80"
+
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "password"
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      PMA_USER: 'root'
+      PMA_PASSWORD: 'password'
