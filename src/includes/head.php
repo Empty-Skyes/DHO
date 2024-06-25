@@ -13,3 +13,5 @@
     <script src="../js/script.js" defer></script>
 </head>
 <body>
+<?php
+$root = $_SERVER['DOCUMENT_ROOT'];

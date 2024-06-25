@@ -16,7 +16,7 @@
             <?php echo $path; ?>
             Mailer
         </a>
-        <a class="nav-link" id="news-tab" data-toggle="pill" href="#pill-news" role="tab" aria-controls="pill-messages" aria-selected="false">
+        <a class="nav-link" id="news-tab" data-toggle="pill" href="#pill-news" role="tab" aria-controls="pill-news" aria-selected="false">
             <?php echo $path; ?>
             News
         </a>
@@ -32,10 +32,13 @@
             <?php echo $path; ?>
             User
         </a>
-        <a class="nav-link disabled" id="data-tab" data-toggle="pill" href="#pill-data" tabindex="-1" role="tab" aria-controls="pill-data" aria-selected="true" aria-disabled="true">
+        <a class="nav-link" id="data-tab" data-toggle="pill" href="#pill-data" role="tab" aria-controls="pill-data" aria-selected="true">
             <?php echo $path; ?>
             Data
         </a>
+        <a id="logout" class="nav-link" href="#">
+            <?php echo $path; ?>
+            Log Out
+        </a>
     </div>
 </div>
-
