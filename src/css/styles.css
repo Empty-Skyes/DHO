@@ -75,6 +75,12 @@ body {
     height: 50px;
     background-image: linear-gradient(to right, #000 , #00000088);
     z-index: 2;
+    align-content: center;
+}
+
+#os-footer-search {
+    margin-left: auto;
+    width: 15vw;
 }
 
 .container-flex-xs {

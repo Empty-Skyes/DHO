@@ -4,6 +4,14 @@ function disableMenuPills(tabs) {
     });
 }
 
+function redirectIndex() {
+    $(document).ready(function() {
+        setTimeout(function() {
+            window.location.href = "../index.php";
+        }, 2000);
+    });
+}
+
 $(document).ready(function() {
     console.log('DOM ready');
 });
@@ -13,7 +21,6 @@ $(window).on('load', function() {
 });
 
 $(document).ready(function() {
-    // Logout click handler
     $('#logout').click(function(e) {
         e.preventDefault();
 
@@ -21,21 +28,15 @@ $(document).ready(function() {
 
         if (confirmLogout) {
             $.ajax({
-                url: '../controllers/osLogOut.php',
-                type: 'POST', // or 'GET'
+                url: '../controllers/logout.php',
+                type: 'POST',
                 success: function(data) {
-                    window.location.href = "../views/osLoginView.php";
+                    window.location.href = "../views/login.php";
                 },
                 error: function(xhr, status, error) {
                     console.error(xhr.responseText);
                 }
             });
         }
-    });
-});
-
-$(document).ready(function() {
-    $('#redirectButton').click(function() {
-        window.location.href = "../index.php";
     });
 });

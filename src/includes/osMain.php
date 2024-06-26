@@ -26,8 +26,6 @@
             tis u
         </div>
         <div class="tab-pane fade" id="pill-data" role="tabpanel" aria-labelledby="date-tab">
-            <?php include 'controllers/osDataController.php';?>
-            Successfully logged out!
         </div>
     </div>
 </div>

@@ -1,0 +1,116 @@
+<?php
+session_start();
+$servername = "db";
+$username = "root";
+$password = "password";
+$dbname = "dho";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $username = htmlspecialchars($_POST['username']);
+        $password = htmlspecialchars($_POST['password']);
+
+        // Validate inputs
+        if (empty($username) || empty($password)) {
+            echo "Username and Password are required.";
+            exit;
+        }
+
+        $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
+        $stmt->execute([$username]);
+        $user = $stmt->fetch();
+
+        if ($user) {
+            if (password_verify($password, $user['password'])) {
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['username'] = $user['username'];
+                $_SESSION['loggedin'] = true;
+
+                header("Location: ../helpers/osStartUp.php");
+                exit;
+            } else {
+                $error_message = "Invalid password";
+            }
+        } else {
+            $error_message = "Username not found";
+        }
+        echo $error_message;
+    }
+} catch(PDOException $e) {
+    echo $e->getMessage();
+}
+?>
+
+<form method="post">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="userLogin" name="username" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="passwordLogin" name="password" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>
+
+<?php
+session_start();
+$servername = "db";
+$username = "root";
+$password = "password";
+$dbname = "dho";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $username = htmlspecialchars($_POST['username']);
+        $password = htmlspecialchars($_POST['password']);
+
+        // Validate inputs
+        if (empty($username) || empty($password)) {
+            echo "Username and Password are required.";
+            exit;
+        }
+
+        // Check if the user already exists
+        $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
+        $stmt->execute([$username]);
+        $existingUser = $stmt->fetch();
+
+        if ($existingUser) {
+            $error_message = "Username already taken";
+            echo $error_message;
+        } else {
+            // Hash the password before storing it
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+            // Insert the new user into the database
+            $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
+            $stmt->execute([$username, $hashedPassword]);
+
+            echo "User registered successfully!";
+        }
+    }
+} catch(PDOException $e) {
+    echo $e->getMessage();
+}
+?>
+
+<form method="post">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="userSignup" name="username" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="passwordSignup" name="password" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+</form>
