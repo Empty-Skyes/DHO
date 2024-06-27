@@ -8,7 +8,7 @@
             <?php echo $path; ?>
             Home
         </a>
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="../helpers/gameLogin.php">
             <?php echo $path; ?>
             The World
         </a>

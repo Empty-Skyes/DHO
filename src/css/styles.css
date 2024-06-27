@@ -79,6 +79,7 @@ body {
 }
 
 #os-footer-search {
+    min-width: fit-content;
     margin-left: auto;
     width: 15vw;
 }
