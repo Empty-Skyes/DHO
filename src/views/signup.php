@@ -1,5 +1,6 @@
-<?php require_once '../includes/head.php'; ?>
-<!-- signup.php -->
+<?php require_once '../includes/osHead.php'; ?>
+
+<!-- Sign Up Form -->
 
 <form method="post" action="../controllers/signup_submit.php">
     <div class="form-group">

@@ -84,6 +84,31 @@ body {
     width: 15vw;
 }
 
+.overlay {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 1);
+    z-index: 1000;
+    transform-origin: center;
+    transition: transform .75s ease-out, opacity .75s ease-out;
+    opacity: 0;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes flickerAnimation {
+    0% { background-color: #000; }
+    25% { background-color: #999; }
+    50% { background-color: #000; }
+    80% { background-color: #fff; }
+    100% { background-color: #fff; }
+}
+
+.overlay-flicker {
+    animation: flickerAnimation 2s linear;
+}
+
 .container-flex-xs {
     flex-basis: 5%;
 }

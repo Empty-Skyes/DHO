@@ -21,7 +21,7 @@
         <div class="tab-pane fade" id="pill-user" role="tabpanel" aria-labelledby="user-tab">
             tis u
         </div>
-        <div class="tab-pane fade" id="pill-data" role="tabpanel" aria-labelledby="date-tab">
+        <div class="tab-pane fade" id="pill-data" role="tabpanel" aria-labelledby="data-tab">
         </div>
     </div>
 </div>

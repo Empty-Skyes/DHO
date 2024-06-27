@@ -1,4 +1,4 @@
-<?php require_once "../includes/head.php"; ?>
+<?php require_once "../includes/osHead.php"; ?>
 
 <ul class="list-group list-group-flush">
     <li class="list-group-item">Sorry</li>

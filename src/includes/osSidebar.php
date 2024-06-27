@@ -8,7 +8,7 @@
             <?php echo $path; ?>
             Home
         </a>
-        <a class="nav-link" href="../helpers/gameLogin.php">
+        <a id="desktopAppAnimation" class="nav-link" href="#">
             <?php echo $path; ?>
             The World
         </a>
@@ -42,3 +42,4 @@
         </a>
     </div>
 </div>
+

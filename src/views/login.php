@@ -1,8 +1,8 @@
-<?php require_once '../includes/head.php'; ?>
+<?php require_once '../includes/osHead.php'; ?>
 
-<!-- login.php -->
+<!-- Login Form -->
 
-<form method="post" action="../controllers/login_submit.php">
+<form id="loginForm" method="post" action="../controllers/login_submit.php">
     <div class="form-group">
         <label for="username">Username</label>
         <input type="text" class="form-control" id="userLogin" name="username" required>

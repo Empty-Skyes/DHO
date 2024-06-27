@@ -1,13 +1,14 @@
 <?php
 
 require_once '../helpers/credentials.php';
+require_once '../models/UserModel.php';
 require_once 'LoginController.php';
 
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    try {
+        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $loginController = new LoginController($conn);
 
         $username = htmlspecialchars($_POST['username']);
@@ -16,12 +17,13 @@ try {
         $loginResult = $loginController->loginUser($username, $password);
 
         if ($loginResult === true) {
-            header("Location: ../helpers/osStartup.php");
-            exit;
+            echo json_encode(['success' => true, 'message' => 'Login successful']);
         } else {
-            echo $loginResult;
+            echo json_encode(['success' => false, 'message' => $loginResult]);
         }
+    } catch(PDOException $e) {
+        echo json_encode(['success' => false, 'message' => 'Database error: ' . $e->getMessage()]);
+    } catch(Exception $e) {
+        echo json_encode(['success' => false, 'message' => 'Unexpected error: ' . $e->getMessage()]);
     }
-} catch(PDOException $e) {
-    echo $e->getMessage();
 }

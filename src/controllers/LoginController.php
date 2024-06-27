@@ -10,10 +10,6 @@ class LoginController {
     }
 
     public function loginUser($username, $password) {
-        if (empty($username) || empty($password)) {
-            return "Username and Password are required.";
-        }
-
         $user = $this->userModel->getUserByUsername($username);
 
         if ($user) {
@@ -22,7 +18,6 @@ class LoginController {
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['loggedin'] = true;
-
                 return true;
             } else {
                 return "Invalid password";
