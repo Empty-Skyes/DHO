@@ -2,7 +2,7 @@
 
 <!-- Sign Up Form -->
 
-<form method="post" action="../controllers/signup_submit.php">
+<form id="signupForm" method="post" action="../controllers/signup_submit.php">
     <div class="form-group">
         <label for="username">Username</label>
         <input type="text" class="form-control" id="userSignup" name="username" required>

@@ -11,23 +11,23 @@ class SignupController {
 
     public function registerUser($username, $password, $passwordRepeat) {
         if (empty($username) || empty($password) || empty($passwordRepeat)) {
-            return "All fields are required.";
+            return ['success' => false, 'message' => 'All fields are required.'];
         }
 
         if ($password !== $passwordRepeat) {
-            return "Passwords do not match.";
+            return ['success' => false, 'message' => 'Passwords do not match.'];
         }
 
         $existingUser = $this->userModel->getUserByUsername($username);
         if ($existingUser) {
-            return "Username already taken";
+            return ['success' => false, 'message' => 'Username already taken.'];
         }
 
         $success = $this->userModel->registerUser($username, $password);
         if ($success) {
-            return "User registered successfully!";
+            return ['success' => true, 'message' => 'User registered successfully!'];
         } else {
-            return "Registration failed. Please try again.";
+            return ['success' => false, 'message' => 'Registration failed. Please try again.'];
         }
     }
 }

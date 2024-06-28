@@ -18,12 +18,12 @@ class LoginController {
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['loggedin'] = true;
-                return true;
+                return ['success' => true, 'message' => 'Login successful'];
             } else {
-                return "Invalid password";
+                return ['success' => false, 'message' => 'Invalid password'];
             }
         } else {
-            return "Username not found";
+            return ['success' => false, 'message' => 'Username not found'];
         }
     }
 }

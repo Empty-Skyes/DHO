@@ -14,9 +14,15 @@ try {
         $password = htmlspecialchars($_POST['password']);
         $passwordRepeat = htmlspecialchars($_POST['passwordRepeat']);
 
-        $message = $signupController->registerUser($username, $password, $passwordRepeat);
-        echo $message;
+        error_log("Signup attempt for username: $username");
+
+        $signupResult = $signupController->registerUser($username, $password, $passwordRepeat);
+        echo json_encode($signupResult);
     }
-} catch(PDOException $e) {
-    echo $e->getMessage();
+} catch (PDOException $e) {
+    error_log("Database error: " . $e->getMessage());
+    echo json_encode(['success' => false, 'message' => 'Database error']);
+} catch (Exception $e) {
+    error_log("Unexpected error: " . $e->getMessage());
+    echo json_encode(['success' => false, 'message' => 'Unexpected error']);
 }
