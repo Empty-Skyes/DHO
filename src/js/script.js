@@ -119,14 +119,22 @@ $(document).ready(function() {
         setTimeout(function() {
             $('#overlay').css('background-color', 'white');
             $('#gameCreditStartup').fadeIn();
-        }, 5500);
+        }, 6000);
 
         setTimeout(function() {
-            $('#gameCreditStartup').fadeOut(1000, function() {
+            $('#gameCreditStartup').fadeOut();
+        }, 7000);
+
+        setTimeout(function() {
+            $('#gameNameStartup').fadeIn();
+        }, 8000);
+
+        setTimeout(function() {
+            $('#gameNameStartup').fadeOut(1000, function() {
                 setTimeout(function() {
                     window.location.href = "../helpers/gameLogin.php";
                 }, 1500);
             });
-        }, 7500);
+        }, 9000);
     });
 });
