@@ -1,3 +1,4 @@
+/*
 function disableMenuPills(tabs) {
     tabs.forEach(function(tab) {
         $('#' + tab + '-tab').addClass('disabled');
@@ -11,6 +12,8 @@ function redirectIndex() {
         }, 2000);
     });
 }
+
+*/
 
 $(document).ready(function() {
     console.log('DOM ready');
@@ -75,16 +78,16 @@ $(document).ready(function() {
     $('#logout').click(function(e) {
         e.preventDefault();
 
-        var confirmLogout = confirm("Are you sure you want to logout?");
+        let confirmLogout = confirm("Are you sure you want to logout?");
 
         if (confirmLogout) {
             $.ajax({
                 url: '../controllers/logout.php',
                 type: 'POST',
-                success: function(data) {
+                success: function() {
                     window.location.href = "../views/login.php";
                 },
-                error: function(xhr, status, error) {
+                error: function(xhr) {
                     console.error(xhr.responseText);
                 }
             });
@@ -94,8 +97,8 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $('#desktopAppAnimation').click(function() {
-        var randomLeft = Math.random() * 50 + 25;
-        var randomTop = Math.random() * 50 + 25;
+        let randomLeft = Math.random() * 50 + 25;
+        let randomTop = Math.random() * 50 + 25;
 
         $('#overlay').css({
             'display': 'block',
