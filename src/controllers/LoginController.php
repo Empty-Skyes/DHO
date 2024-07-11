@@ -3,7 +3,7 @@
 require_once '../models/UserModel.php';
 
 class LoginController {
-    private $userModel;
+    private UserModel $userModel;
 
     public function __construct($conn) {
         $this->userModel = new UserModel($conn);

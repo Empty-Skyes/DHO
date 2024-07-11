@@ -1,5 +1,6 @@
-<div id="os-report">
-</div>
+<?php $part = 'osMain';?>
+
+<div id="os-report"></div>
 
 <div id="os-main">
     <div class="tab-content" id="pills-tabContent">

@@ -1,3 +1,5 @@
+<?php $part = 'osBody';?>
+
 <div id="os-body">
     <div class="container-flex-xs">
         <?php include 'includes/osSidebar.php'; ?>

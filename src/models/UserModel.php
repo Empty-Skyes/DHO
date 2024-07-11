@@ -7,7 +7,8 @@ class UserModel {
         $this->conn = $conn;
     }
 
-    public function registerUser($username, $password) {
+    public function registerUser($username, $password): bool
+    {
         try {
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 

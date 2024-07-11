@@ -6,9 +6,12 @@
 
 include 'includes/osHead.php';
 
+include 'views/logger.php';
+
+
 /*
 include 'includes/osHeader.php';
 include 'includes/osBody.php';
 include 'includes/osFooter.php';
-include 'includes/gameStartup.php';
+include 'helpers/gameStartup.php';
 */
