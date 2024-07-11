@@ -38,7 +38,7 @@ $path = '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="cu
             <?php echo $path; ?>
             User
         </a>
-        <a class="nav-link" id="data-tab" data-toggle="pill" href="#pill-data" role="tab" aria-controls="pill-data" aria-selected="true">
+        <a id="log-file" class="nav-link" id="data-tab" data-toggle="pill" href="#pill-data" role="tab" aria-controls="pill-data" aria-selected="true">
             <?php echo $path; ?>
             Data
         </a>

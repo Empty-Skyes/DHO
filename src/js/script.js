@@ -43,6 +43,7 @@ $(document).ready(function() {
             },
             error: function(xhr, status, error) {
                 console.error('AJAX Error: ' + status, error);
+                console.log('Response:', xhr.responseText);
                 alert('An error occurred. Please try again later.');
             }
         });
@@ -54,7 +55,7 @@ $(document).ready(function() {
         event.preventDefault();
 
         $.ajax({
-            url: '/controllers/signup_submit.php',
+            url: '../controllers/signup_submit.php',
             type: 'POST',
             data: $(this).serialize(),
             dataType: 'json',
@@ -68,6 +69,7 @@ $(document).ready(function() {
             },
             error: function(xhr, status, error) {
                 console.error('AJAX Error: ' + status, error);
+                console.log('Response:', xhr.responseText);
                 alert('An error occurred. Please try again later.');
             }
         });

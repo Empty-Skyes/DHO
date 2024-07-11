@@ -8,6 +8,3 @@
         <?php include 'includes/osMain.php'; ?>
     </div>
 </div>
-<div id="os-background">
-    <img src="<?php echo "assets/img/os-bg-placeholder.png"?>" alt="bg">
-</div>
