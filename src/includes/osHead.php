@@ -19,5 +19,3 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet">
 </head>
 <body>
-<?php
-$root = $_SERVER['DOCUMENT_ROOT'];
