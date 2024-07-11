@@ -4,7 +4,7 @@
 
 <?php
 
-include 'includes/osHead.php';
+include_once 'includes/osHead.php';
 
 /*
 include 'includes/osHeader.php';
