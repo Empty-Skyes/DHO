@@ -1,7 +1,10 @@
 <?php
 
+use JetBrains\PhpStorm\NoReturn;
+
 class LogoutController {
-    public function logout() {
+    #[NoReturn] public function logout(): void
+    {
         session_start();
 
         $_SESSION = array();

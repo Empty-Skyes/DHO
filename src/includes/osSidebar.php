@@ -1,6 +1,12 @@
-<?php $path = '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+<?php
+
+$part = 'osSidebar';
+
+$path = '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
   <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-</svg>'?>
+</svg>'
+
+?>
 
 <div id="os-sidebar">
     <div class="nav flex-column nav-pills" id="pills-tab" role="tablist" aria-orientation="vertical">
@@ -32,7 +38,7 @@
             <?php echo $path; ?>
             User
         </a>
-        <a class="nav-link" id="data-tab" data-toggle="pill" href="#pill-data" role="tab" aria-controls="pill-data" aria-selected="true">
+        <a id="log-file" class="nav-link" id="data-tab" data-toggle="pill" href="#pill-data" role="tab" aria-controls="pill-data" aria-selected="true">
             <?php echo $path; ?>
             Data
         </a>
