@@ -1,3 +1,5 @@
+<?php $part = 'osFooter';?>
+
 <div id="os-footer">
     <div id="os-footer-search">
         <form class="d-flex mx-1" role="search">
