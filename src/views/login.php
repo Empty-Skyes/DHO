@@ -2,7 +2,7 @@
 
 <!-- Login Form -->
 
-<form id="loginForm" method="post" action="../controllers/login_submit.php">
+<form id="loginForm" method="post" action="../controllers/login_submit.php" class="osForm">
     <div class="form-group">
         <label for="username">Username<input type="text" class="form-control" id="userLogin" name="username" required></label>
     </div>

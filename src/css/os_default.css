@@ -11,16 +11,26 @@ body {
     overflow: hidden;
 }
 
-#os-login {
-    justify-content: center;
-    padding: 4em;
+.osForm * {
+    margin-bottom: 2.5%;
 }
 
 #os-header {
+    display: flex;
     width: 100%;
     height: 50px;
+    align-items: center;
     background-image: linear-gradient(to right, #000 , #00000088);
     z-index: 2;
+}
+
+#os-header p {
+    margin: 0;
+    padding: 0;
+}
+
+#os-welcome {
+    color: #aaaaaa;
 }
 
 #os-body {
@@ -130,7 +140,7 @@ Click- Overlay
 }
 
 .overlay-flicker {
-    animation: flickerAnimation 5s linear;
+    animation: flickerAnimation 6s linear;
 }
 
 @keyframes flickerAnimation {
