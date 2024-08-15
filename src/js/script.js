@@ -28,6 +28,12 @@ $(window).on('load', function() {
 });
 
 $(document).ready(function() {
+    $('#os-background').on('error', function() {
+        $(this).hide();
+    });
+});
+
+$(document).ready(function() {
     $('#loginForm').submit(function(event) {
         event.preventDefault();
 
@@ -95,6 +101,7 @@ $(document).ready(function() {
                 },
                 error: function(xhr) {
                     console.error(xhr.responseText);
+                    console.log('Response:', xhr.responseText);
                 }
             });
         }

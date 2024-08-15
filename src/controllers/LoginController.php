@@ -9,7 +9,8 @@ class LoginController {
         $this->userModel = new UserModel($conn);
     }
 
-    public function loginUser($username, $password) {
+    public function loginUser($username, $password): array
+    {
         $user = $this->userModel->getUserByUsername($username);
 
         if ($user) {
