@@ -18,6 +18,10 @@ class SignupController {
             return ['success' => false, 'message' => 'Passwords do not match.'];
         }
 
+        if (!$this->isPasswordComplex($password)) {
+            return ['success' => false, 'message' => 'Password does not meet complexity requirements.'];
+        }
+
         $existingUser = $this->userModel->getUserByUsername($username);
         if ($existingUser) {
             return ['success' => false, 'message' => 'Username already taken.'];
@@ -29,5 +33,16 @@ class SignupController {
         } else {
             return ['success' => false, 'message' => 'Registration failed. Please try again.'];
         }
+    }
+
+    private function isPasswordComplex($password)
+    {
+        $length = strlen($password) >= 8;
+        $upper = preg_match('@[A-Z]@', $password);
+        $lower = preg_match('@[a-z]@', $password);
+        $number = preg_match('@[0-9]@', $password);
+        $special = preg_match('@\W@', $password);
+
+        return $length && $upper && $lower && $number && $special;
     }
 }

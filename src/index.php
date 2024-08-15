@@ -7,5 +7,4 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     exit;
 }
 
-$pageTitle = 'Home';
 include 'views/desktop.php';

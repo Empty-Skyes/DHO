@@ -15,6 +15,10 @@ function redirectIndex() {
 
 */
 
+$(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+})
+
 $(document).ready(function() {
     console.log('DOM ready');
 });
