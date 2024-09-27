@@ -18,9 +18,11 @@ class SignupController {
             return ['success' => false, 'message' => 'Passwords do not match.'];
         }
 
+        /*
         if (!$this->isPasswordComplex($password)) {
             return ['success' => false, 'message' => 'Password does not meet complexity requirements.'];
         }
+        */
 
         $existingUser = $this->userModel->getUserByUsername($username);
         if ($existingUser) {

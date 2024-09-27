@@ -9,4 +9,4 @@
     </div>
 </div>
 
-<div id="os-background"></div>
+<!-- <div id="os-background"></div> -->

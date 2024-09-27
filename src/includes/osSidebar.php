@@ -18,27 +18,27 @@ $path = '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="cu
             <?php echo $path; ?>
             The World
         </a>
-        <a class="nav-link" id="mailer-tab" data-toggle="pill" href="#pill-mailer" role="tab" aria-controls="pill-mailer" aria-selected="false">
+        <a class="nav-link" id="mailer-tab" data-toggle="pill" href="#os-mailer" role="tab" aria-controls="pill-mailer" aria-selected="false">
             <?php echo $path; ?>
             Mailer
         </a>
-        <a class="nav-link" id="news-tab" data-toggle="pill" href="#pill-news" role="tab" aria-controls="pill-news" aria-selected="false">
+        <a class="nav-link" id="news-tab" data-toggle="pill" href="#os-news" role="tab" aria-controls="pill-news" aria-selected="false">
             <?php echo $path; ?>
             News
         </a>
-        <a class="nav-link" id="accessory-tab" data-toggle="pill" href="#pill-accessory" role="tab" aria-controls="pill-accessory" aria-selected="false">
+        <a class="nav-link" id="accessory-tab" data-toggle="pill" href="#os-accessory" role="tab" aria-controls="pill-accessory" aria-selected="false">
             <?php echo $path; ?>
             Accessory
         </a>
-        <a class="nav-link" id="audio-tab" data-toggle="pill" href="#pill-audio" role="tab" aria-controls="pill-audio" aria-selected="true">
+        <a class="nav-link" id="audio-tab" data-toggle="pill" href="#os-audio" role="tab" aria-controls="pill-audio" aria-selected="true">
             <?php echo $path; ?>
             Audio
         </a>
-        <a class="nav-link" id="user-tab" data-toggle="pill" href="#pill-user" role="tab" aria-controls="pill-user" aria-selected="true">
+        <a class="nav-link" id="user-tab" data-toggle="pill" href="#os-user" role="tab" aria-controls="pill-user" aria-selected="true">
             <?php echo $path; ?>
             User
         </a>
-        <a id="log-file" class="nav-link" id="data-tab" data-toggle="pill" href="#pill-data" role="tab" aria-controls="pill-data" aria-selected="true">
+        <a id="log-file" class="nav-link" id="data-tab" data-toggle="pill" href="#os-data" role="tab" aria-controls="pill-data" aria-selected="true">
             <?php echo $path; ?>
             Data
         </a>

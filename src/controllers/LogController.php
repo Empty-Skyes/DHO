@@ -1,5 +1,5 @@
 <?php
-include_once 'models/LogModel.php';
+include_once '../models/LogModel.php';
 
 class LogController {
     private Logger $logger;
